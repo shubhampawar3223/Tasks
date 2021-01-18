@@ -1,0 +1,366 @@
+Problem1: Part A
+
+var cat ={
+    name:"Fluffy",
+    activities:['play','eat cat food'],
+    catFriends:[
+    {
+    name:'bar',
+    activities:['be grumpy', 'eat bread omblet'],
+    weight:8,
+    furcolor:'white'
+    },
+    {
+    name:'foo',
+    activities:['sleep','pre-sleep naps'],
+    weight:3
+    }
+    ]  
+}
+//task1
+cat.height= 3.2;
+//task1
+cat.weight= 6;
+
+//task2
+cat.name ="Fluffyy";
+
+//task3
+var t_count=0
+function print_acivities(cat){
+    
+    let ans =[]
+    for(i=0;i< cat.catFriends.length; i++){
+        for(j=0;j<cat.catFriends[i].activities.length;j++){
+            ans.push(cat.catFriends[i].activities[j])
+            ++t_count;
+        }
+    }
+    return ans;
+}
+
+console.log(print_acivities(cat))
+
+//task4
+for(i=0;i< cat.catFriends.length; i++){
+
+    console.log(cat.catFriends[i].name)
+}
+
+//task5
+let sum =0;
+for(i=0;i< cat.catFriends.length; i++){
+
+    sum = sum+cat.catFriends[i].weight
+}
+console.log(sum)
+
+//task6
+t_count = t_count + cat.activities.length; 
+console.log(t_count)
+
+//task 7
+cat.catFriends[0].activities.push("sleep")
+cat.catFriends[0].activities.push("pre-sleep naps")
+cat.catFriends[1].activities.push("be_grumpy")
+cat.catFriends[1].activities.push("eat bread omlet")
+
+
+//task8
+cat.catFriends[0].furcolor ="golden";
+console.log(cat.catFriends[0].furcolor)
+
+
+Output:
+[ 'be grumpy', 'eat bread omblet', 'sleep', 'pre-sleep naps' ]
+bar
+foo
+11
+6
+golden
+----------------------------------------------------------------------------------------------------------------------------------
+
+Problem0: Part B
+var myCar = {
+      make:'Buggati',
+      model: 'Bugatti La Voiture Noire',
+      year:2019,
+      accidents:[
+      {
+        date:'3/15/2019',
+        damage_points:'5000',
+        atFaultForAccident:true
+      },
+      {
+        date:'7/4/2022',
+        damage_points:'2200',
+        atFaultForAccident:true
+      },
+      {
+        date:'6/22/2021',
+        damage_points:'7900',
+        atFaultForAccident: true
+      }
+    ]
+}
+
+  
+  for(i=0; i< myCar.accidents.length; i++){
+  myCar.accidents[i].atFaultForAccident = false;
+  }
+  
+  
+    for(i=0; i< myCar.accidents.length; i++){
+  console.log(myCar.accidents[i].date);
+  }
+  
+Output:
+3/15/2019
+7/4/2022
+6/22/2021
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Problem 1:
+
+var obj = {name:"Rajinikanth",age:33,hasPets:false}
+
+function printAllValues(obj){
+    let ans=[]
+  for(var key in obj){
+      ans.push(obj[key])
+  }
+  console.log(ans)
+}
+
+printAllValues(obj)
+
+Output:
+[ 'Rajinikanth', 33, false ]
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Problem 2:
+
+var obj = {name:"Rajinikanth",age:33,hasPets:false}
+
+//printAllKeys(obj) appends all the keys of object in array and prints the array.
+function printAllKeys(obj){
+    let ans1=[]
+  for(var key in obj){
+      ans1.push(key)
+  }
+  console.log(ans1)
+}
+
+printAllKeys(obj)
+
+Output:
+[ 'name', 'age', 'hasPets' ]
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Problem 3:
+
+var obj = {name:"ISRO",age:35,role:"scientist"}
+
+//printAllKeys(obj) appends all the keys of object in array and prints the array.
+function convertListToObject(obj){
+    let ans2=[]
+  for(var key in obj){
+      let temp=[]
+      temp.push(key)
+      temp.push(obj[key])
+      ans2.push(temp)
+  }
+  console.log(ans2)
+}
+
+convertListToObject(obj)
+
+Output:
+[ [ 'name', 'ISRO' ], [ 'age', 35 ], [ 'role', 'scientist' ] ]
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Problem 4:
+
+var arr = ["Guvi","I","am","a geek"];
+
+function transformFirstAndLast(arr){
+    obj={};
+    obj[arr[0]] = arr[arr.length -1];
+    return obj;
+}
+
+console.log(transformFirstAndLast(arr))
+
+Output:
+{ Guvi: 'a geek' }
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Problem 5:
+
+var arr = [["make","Ford"],["model","Mustang"],["year",1964]];
+
+function fromListToObject(arr){
+    obj={};
+    let a,b;
+    for(i=0;i<arr.length; i++){
+        a=arr[i][0]
+        b=arr[i][1]
+        obj[a] =b;
+    }
+    return obj;
+}console.log(fromListToObject(arr));
+
+
+
+Output:
+{ make: 'Ford', model: 'Mustang', year: 1964 }
+----------------------------------------------------------------------------------------------------------------------------------
+
+Problem 6:
+
+var arr = [[["firstName","Vasanth"],["lastName","Raja"],["age",24],
+          ["role","JSWizard"]],[["firstName","Sri"],["lastName","Devi"],["age",28],["role","Coder"]]]
+
+function transformEmployeeData(arr){
+    let ans=[];
+    for(i=0; i<arr.length; i++){
+        let obj={}
+        var a,b;
+        for(j=0; j< arr[i].length; j++){
+            a = arr[i][j][0]
+            b = arr[i][j][1]
+            obj[a] =b;
+        }
+        ans.push(obj)
+    }
+    return ans;
+}
+
+console.log(transformEmployeeData(arr))
+
+Output:
+[ { firstName: 'Vasanth',
+    lastName: 'Raja',
+    age: 24,
+    role: 'JSWizard' },
+  { firstName: 'Sri', lastName: 'Devi', age: 28, role: 'Coder' } ]
+----------------------------------------------------------------------------------------------------------------------------------
+
+Problem 7:
+
+function assertObjectEqual(actual, expected, testName){
+    let count =0
+    for(var key in actual){
+        if(actual[key] !== expected[key]){
+            ++count;
+            break;
+    }
+    }   
+    
+    if(count){
+        console.log("FAILED"+' '+testName+' '+ "Expected"+' '+JSON.stringify(actual) +' '+ ", but got" + JSON.stringify(expected))
+    }
+    else{
+        console.log("Passed");
+    }
+}
+
+
+var expected ={foo: 5,bar:6};
+var actual = {foo:5, bar:6};
+//testA
+assertObjectEqual(actual,expected,'testA')
+
+//testB
+expected ={foo: 12,bar: 6};
+actual =  {foo: 5, bar: 5};
+assertObjectEqual(actual,expected,'testB')
+
+Output:
+Passed
+FAILED testB Expected {"foo":5,"bar":5} , but got{"foo":12,"bar":6}
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Problem 8:
+
+var securityQuestions =[
+{
+question:"What was your first pet's name?",
+expectedAnswer:"FlufferNutter"
+},
+{
+question:"What was the model year of your first car?",
+expectedAnswer:"1985"    
+},
+{
+question:"What city were you born in?",
+expectedAnswer:"NYC"
+}
+]
+
+
+function checkSecurityQuestions(securityQuestions,question,answer){
+    let ans;
+    for(i=0 ;i <securityQuestions.length; i++){
+        if(securityQuestions[i].question === question){
+            if(securityQuestions[i].expectedAnswer === answer)
+                  ans = true;
+            else
+                  ans =false;
+            break;
+        }
+    }
+    return ans;
+}
+
+//Test Case1
+var que = "What was your first pet's name?"
+var ans = "FlufferNutter"
+
+var result = checkSecurityQuestions(securityQuestions,que,ans)
+console.log(result)
+
+//Test Case2
+var que = "What was your first pet's name?"
+var ans = "DufferNutter"
+
+var result = checkSecurityQuestions(securityQuestions,que,ans)
+console.log(result)
+
+Output:
+true
+false
+----------------------------------------------------------------------------------------------------------------------------------
+
+Problem 9:
+
+var students = [
+{name:"Siddharth Abhimanyu",age:21},{name:"Malar",age:25},
+{name:"Maari",age:18},{name:"Bhallala Deva",age:17},
+{name:"Baahubali",age:16},{name:"AAK chandran",age:23},
+{name:"Gabbar Singh",age:33},{name:"Mogambo",age:53},
+{name:"Munnabhai",age:40},{name:"Sher Khan",age:20},
+{name:"Chulbul Pandey",age:19},{name:"Anthony",age:28},
+{name:"Devdas",age:56}
+]
+
+function returnMinors(arr)
+{
+    let ans=[]
+    for(i=0;i< arr.length; i++){
+            if(arr[i].age < 20)
+             ans.push(arr[i].name)
+    }
+   return ans;
+}
+
+console.log(returnMinors(students));
+
+Output:
+[ 'Maari', 'Bhallala Deva', 'Baahubali', 'Chulbul Pandey' ]
